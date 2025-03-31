@@ -1,9 +1,17 @@
+:root {
+  --background: #FAFAFA;
+  --text-color: #1A1A1A;
+  --primary-color: #87CEEB; /* Blue color */
+  --secondary-color: ; /* Green color */
+  --accent-color: #ADD8E6;
+  --text-size: 17px;
+}
 body {
-  background-color: #f7f7f7;
+  background-color: var(--background);
+  font-family: 'Roboto', sans-serif;
 }
 h1 {
-  font-family: 'Raleway';
-  color: #222222;
+  color: var(--text-color);
   font-size: 34px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -11,8 +19,6 @@ h1 {
   word-spacing: 3px;
 }
 h2 {
-  font-family: "Raleway";
-  color: #2D2D2D;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 0.4px;
@@ -20,8 +26,6 @@ h2 {
   word-spacing: 3px;
 }
 h3, h4, h5 {
-  font-family: 'Raleway';
-  color: #222222;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.4px;
@@ -29,39 +33,25 @@ h3, h4, h5 {
   word-spacing: 2px;
 }
 p {
-  color: black;
-  font-family: 'Open Sans';
-  font-size: 17px;
+  font-size: var(--text-size);
   font-weight: 500;
   letter-spacing: -.5px;
   line-height: 1.4;
   word-spacing: 1px;
 }
-/*
+/* For Buttons */
 button {
-  font-size: 1.5rem;
-  padding: .5em 1em;
-  background: #e5e5e5;
-  color: #f7f7f7;
+  background-color: #87CEEB; /* Sky Blue */
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-section {
-  height: 100px;
-  width: 200px;
-  margin-bottom: 5px;
+
+button:hover {
+  background-color: #B0E0E6; /* Powder Blue */
 }
-.s1 {
-  background-color: #05299e;
-}
-.s2 {
-  background-color: #f5f5f5;
-}
-.s3 {
-  background-color: #000000;
-}
-.s4 {
-  background-color: #a8f9ff;
-}
-.s5 {
-  background-color: #dddddd;
-}
-  */
+
