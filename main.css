@@ -1,13 +1,13 @@
 :root {
-  --background: #FAFAFA;
+  --off-white: #FAFAFA;
   --text-color: #1A1A1A;
-  --primary-color: #87CEEB; /* Blue color */
+  --primary-color: #1447E6; /* Blue color */
   --secondary-color: ; /* Green color */
-  --accent-color: #ADD8E6;
+  --accent-color: #3b3b3b;
   --text-size: 17px;
 }
 body {
-  background-color: var(--background);
+  background-color: var(--off-white);
   font-family: 'Roboto', sans-serif;
 }
 h1 {
@@ -41,8 +41,8 @@ p {
 }
 /* For Buttons */
 button {
-  background-color: #87CEEB; /* Sky Blue */
-  color: var(--text-color);
+  background-color: var(--primary-color); /* Sky Blue */
+  color: var(--off-white);
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -52,6 +52,6 @@ button {
 }
 
 button:hover {
-  background-color: #B0E0E6; /* Powder Blue */
+  background-color: var(--accent-color); /* Powder Blue */
 }
 
