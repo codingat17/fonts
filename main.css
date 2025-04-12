@@ -1,57 +1,77 @@
 :root {
-  --off-white: #FAFAFA;
-  --text-color: #1A1A1A;
+  --off-white: #FAFAFA; /* Off-white for body-bg*/
+  --text-color: #1A1A1A; /*Soft-black color */
   --primary-color: #1447E6; /* Blue color */
-  --secondary-color: ; /* Green color */
-  --accent-color: #3b3b3b;
+  --secondary-color: #F1C40F; /*Soft Gold color */
+  --accent-color: #D3D3D3; /*Light gray color */
   --text-size: 17px;
 }
-body {
-  background-color: var(--off-white);
-  font-family: 'Roboto', sans-serif;
-}
-h1 {
-  color: var(--text-color);
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  line-height: 1.5;
-  word-spacing: 3px;
-}
-h2 {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  line-height: 1.4;
-  word-spacing: 3px;
-}
-h3, h4, h5 {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  line-height: 1.4;
-  word-spacing: 2px;
-}
-p {
-  font-size: var(--text-size);
-  font-weight: 500;
-  letter-spacing: -.5px;
-  line-height: 1.4;
-  word-spacing: 1px;
-}
-/* For Buttons */
-button {
-  background-color: var(--primary-color); /* Sky Blue */
-  color: var(--off-white);
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-button:hover {
-  background-color: var(--accent-color); /* Powder Blue */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+.image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  color: #202020;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.image-container:hover .content {
+  opacity: 1;
+}
+.image-container:hover .image {
+  opacity: 0.7;
+}
+
+/*
+.image-container {
+  margin: 10px;
+  max-width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.image-container img {
+  aspect-ratio: 1 / 1;
+}
+#slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+*/
+
+/* For medium (md) screens and above */
+@media (min-width: 768px) {
+  #slider-image {
+    width: 100%; /* Keep image at full width */
+    height: auto; /* Let the height adjust automatically */
+    object-fit: contain; /* Retain aspect ratio without stretching */
+    transition: none; /* Disable transition effect */
+  }
 }
 

@@ -2,23 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
+  <title>Scroll Reveal</title>
+  <style>
+    body {
+      height: 2000px; /* Just to make scrolling possible */
+      margin: 0;
+      padding: 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 2s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .box {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 200px;
+      font-size: 24px;
+    }
+  </style>
 </head>
 <body>
 
-  <button>give</button>
-  
-  <h1>Trying colors - What's happening?</h1>
-  <h2>Trying colors - What's happening?</h2>
-  <h3>Trying colors - What's happening?</h>
+  <div class="box reveal">Scroll to Reveal Me</div>
+  <div class="box reveal">Me Too!</div>
+  <div class="box reveal">And Me!</div>
 
-  <p>
-    Lord, We put our trust in you🤲. Surround us with Your loving protection, and keep us safe from harm. Protect us from evil, danger, and uncertainty. Cover us with Your wings, and shelter us in Your loving care.
-  </p>
+  <script>
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal); // Also reveal on page load
+
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        } else {
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
